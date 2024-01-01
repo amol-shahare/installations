@@ -1,0 +1,11 @@
+# Use the official httpd base image
+FROM httpd:latest
+
+# Remove the default httpd index.html
+RUN rm -rf /usr/local/apache2/htdocs/*
+
+# Copy the content of your local project directory to the httpd web root
+COPY . /usr/local/apache2/htdocs
+
+# Expose port 80
+EXPOSE 80

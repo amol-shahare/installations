@@ -1,0 +1,11 @@
+# Use the official NGINX base image
+FROM nginx:latest
+
+# Remove the default NGINX index.html
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy the content of your local project directory to the NGINX web root
+COPY . /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
